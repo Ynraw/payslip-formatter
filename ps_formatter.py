@@ -1,7 +1,6 @@
 '''this will format my payslip'''
 import os
-from formatter import format_15, format_30
-
+from formatter import format_header, format_content, format_summary
 
 
 def get_text_lines(file):
@@ -10,7 +9,7 @@ def get_text_lines(file):
 
 def get_files(dir):
     files = os.listdir()
-    files = [file for file in files if '15' in file]
+    files = [file for file in files if '_ps' in file]
     return files
 
 
@@ -24,15 +23,16 @@ def main():
         print('Processing {}'.format(file))
 
 
-        with open(file_name + 'formatted' + file_ext, 'wt') as file_handle:
+        with open(file_name + '_format' + file_ext, 'wt') as file_handle:
             for idx,line in enumerate(lines):
-                try:
-                    file_handle.write(format_15[idx](*line.strip().split()))
-                except TypeError as e:
-                    print(e)
-                    continue
+                if format_header.get(idx):
+                    file_handle.write(format_header.get(idx)(*line.strip().split()) + '\n')
+                elif format_content.get(idx):
+                    file_handle.write(format_content.get(idx)(*line.strip().split()) + '\n')
+                else:
+                    file_handle.write(format_summary.get(idx)(*line.strip().split()) + '\n')
+                    
         print('Finished {}'.format(file))
-
 
 
 
