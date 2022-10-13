@@ -56,7 +56,6 @@ def text_spacer(*args, spaces=None):
         placeholder += arg.rjust(space)
     return placeholder
 
-
 format_header = {0: lambda a, b, c,: a.rjust(54) + 
                                      b.rjust(8) +
                                      c.rjust(12),
@@ -102,7 +101,7 @@ format_summary = {17:lambda x: x,
                                               c.rjust(15) + 
                                               d.rjust(16) +
                                               e.rjust(11) +
-                                              f.rjust(15),
+                                              f.rjust(16),
                   20:lambda a, b, c: a.rjust(3) + 
                                      b.rjust(4) + 
                                      c.rjust(22),
