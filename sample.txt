@@ -1,0 +1,33 @@
+ Period Ending: 12/15/2002
+70102381 fName mName Last_name
+V*S$Y@S FIELD MEASUREMENT
+ SUBAREA x10z
+ SUBAREA DESC Network C*b*
+
+
+ EARNINGS DEDUCTIONS / ADJUSTMENTS
+-------------------------------------------------------------------------------
+ TYPE NUM AMOUNT | TYPE NUM AMOUNT
+-------------------------------------|-----------------------------------------
+Salary Basic (Ne 0.00 79,135.00 | Total Tax for cu 0.00 8,915.16
+ | SSS EE Contribut 0.00 900.00
+ | MPF EE Contribut 0.00 225.00
+ | EE NHIP Contribu 0.00 582.70
+ | HDMF EE Contribu 0.00 100.00
+ |
+ |
+ |
+-------------------------------------|-----------------------------------------
+ LOAN BALANCES:
+
+
+
+
+
+Total Earnings 79,135.00 Total Deductions 5,722.86
+Net Pay 73,412.14
+YTD Basic 1,495,295.00 YTD Tax Paid 169,119.91
+YTD Allowances 0.00
+
+ *** NOT VALID UNLESS PRINTED AND SIGNED BY AUTHORIZED SIGNATORIES ***
+ Page 1

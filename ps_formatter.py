@@ -1,4 +1,6 @@
-'''this will format my payslip.'''
+'''copy pasting from a pdf file will remove all the formatting so i made a 
+    command line app that will format my payslip to be readable.'''
+    
 import os
 from formatter import format_header, format_content, format_summary
 from argparse import ArgumentParser
@@ -36,13 +38,10 @@ def main(file):
 
 
 if __name__ == '__main__':
-
+ 
     my_parser = ArgumentParser(prog='',
                            usage='Command line application to format my payslip as textfile')
     my_parser.add_argument('-f', '--file', type=str, default=None, help='specify file to be formatted')
-
     args = my_parser.parse_args()
 
     main(args.file)
-
-

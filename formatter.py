@@ -1,6 +1,9 @@
 '''text formatters. these are function stored in a dictionary that will perform formatting.'''
 
 def sift_num(text):
+    '''
+    Extract numbers from words/phrases.
+    '''
     label = ' '.join([word for word in text.split() if not word.replace(',','')
                                                         .replace('.','')
                                                         .replace('-','').isnumeric()])
@@ -10,6 +13,9 @@ def sift_num(text):
     return label, numbers
 
 def format_income(income):
+    '''
+    Format labels and numbers on the income side of payslip.
+    '''
     num_space = [7, 12]
     labels, numbers = sift_num(income)
     labels = labels.ljust(16)
@@ -17,9 +23,17 @@ def format_income(income):
     return labels + numbers
 
 def format_partition(partition):
+    '''
+    Format the positioning of partition in between income and deductions
+    '''
     return partition.rjust(3)    
 
 def format_deductions(deductions):
+    '''
+    Format labels and numbers on the deductions side of the payslip.
+    Args:
+        
+    '''
     num_space = [9, 11]
     labels, numbers = sift_num(deductions)
     labels = labels.rjust(20)
@@ -28,6 +42,9 @@ def format_deductions(deductions):
     return labels + numbers
 
 def format_10(*args):
+    '''
+    Checking for presence of income and deductions
+    '''
     income, partition, deductions = ' '.join(args).partition('|')
     if income and deductions:
         income = format_income(income)
@@ -46,17 +63,26 @@ def format_10(*args):
         return format_divider(*partition)
 
 def format_divider(*args):
+    '''
+    Positions the divider in the center.
+    '''
     arg = args[0]
     return arg.rjust(38)
 
 def text_spacer(*args, spaces=None):
+    '''
+    Positions the words and numbers in the line string.
+    Args:
+        Are the strings that will be positioned
+    '''
     placeholder = ''
 
     for arg,space in zip(args,spaces):
         placeholder += arg.rjust(space)
     return placeholder
+    
 
-format_header = {0: lambda a, b, c,: a.rjust(54) + 
+format_header = {0: lambda a, b, c,: a.rjust(54) +
                                      b.rjust(8) +
                                      c.rjust(12),
                 1: lambda a, b, c, d: '{}     {} {} {}'.format(a,b,c,d),
